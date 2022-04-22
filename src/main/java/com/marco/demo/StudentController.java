@@ -55,4 +55,9 @@ public class StudentController {
         repo.save(s);
     }
 
+    @GetMapping("/lessAge/{age}")
+    public List<Student> lessThenAge(@PathVariable Integer age){
+      return repo.StudentLessThenAge(age);
+    }
+
 }
