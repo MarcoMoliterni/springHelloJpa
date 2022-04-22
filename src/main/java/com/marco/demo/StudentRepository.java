@@ -22,4 +22,6 @@ public interface StudentRepository extends CrudRepository<Student,Integer> {
     List<Student> findLikeName(@Param("name") String name);
 
 
+    @Query(value = "SELECT * FROM student WHERE STUDENT_AGE <= :age", nativeQuery = true)
+    List<Student> StudentLessThenAge(@Param("age") Integer age);
 }
